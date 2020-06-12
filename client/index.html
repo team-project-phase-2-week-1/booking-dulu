@@ -1,38 +1,115 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-    <title>Restaurant</title>
-</head>
-<body>
-    <div class="container mt-5">
-        <div class="container mt-5 text-center">
-            <h1>Restaurant Search</h1>
-        </div>
-        <!-- search-form -->
-        <nav class="navbar navbar-light bg-light">
-            <form onsubmit="searchRestaurant(event)" class="form-inline">
-              <input id="city" class="form-control mr-sm-2" type="search" placeholder="Search by City" aria-label="Search">
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-        </nav>
-        <!-- table-restaurant -->
-        <table class="table table-striped">
-            <thead class="thead-dark">
-              <tr>
-                <th scope="col">Name</th>
-                <th scope="col">Address</th>
-                <th scope="col">Action</th>
-              </tr>
-            </thead>
-            <tbody class="container-home">
-            </tbody>
-          </table>
+    <title>My Fancy Todo Tracker </title>
+  </head>
+  <body>
+
+    <div class="container mt-5 restaurant">
+      <div class="container mt-5 text-center">
+          <h1>Restaurant Search</h1>
+      </div>
+      <!-- search-form -->
+      <nav class="navbar navbar-light bg-light">
+          <form onsubmit="searchRestaurant(event)" class="form-inline">
+            <input id="city" class="form-control mr-sm-2" type="search" placeholder="Search by City" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+      </nav>
+      <!-- table-restaurant -->
+      <table class="table table-striped">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Address</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody class="container-home">
+          </tbody>
+        </table>
     </div>
+
+    <div class="login-page">
+      <h1>Welcome to Booking Dulu</h1>
+      <p>Please login to continue</p>
+      <p>Click <a href="" onclick="toRegister(event)">here</a> to register</p>
+      <form onsubmit="login(event)" id="login">
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <div class="register-page">
+      <h2>Register new user</h2>
+      <form onsubmit="register(event)" id="register">
+          <div class="form-group">
+              <label for="name-reg">Name</label>
+              <input type="text" class="form-control" id="name-reg">
+            </div>
+          <div class="form-group">
+            <label for="email-reg">Email address</label>
+            <input type="email" class="form-control" id="email-reg">
+          </div>
+          <div class="form-group">
+            <label for="password-reg">Password</label>
+            <input type="password" class="form-control" id="password-reg">
+          </div>
+          <div class="form-check">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="gender-reg" value="Male">
+              <label class="form-check-label" for="gender-reg">Male</label><br>
+              <input class="form-check-input" type="radio" name="exampleRadios" id="gender-reg" value="Female">
+              <label class="form-check-label" for="gender-reg">Female</label><br><br>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+
+    <div class="container d-flex justify-content-center mt-5 mb-5">
+      <form onsubmit="search(event)" id="search-form" class="form-inline">
+        <!-- <div class="form-group mb-2">
+          <label for="staticEmail2" class="sr-only">Email</label>
+          <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="email@example.com">
+        </div> -->
+        <div class="form-group mx-sm-3 mb-2">
+          <input type="text" class="form-control" id="city" placeholder="your city">
+          <input type="submit" class="btn btn-success ml-3" value="search">
+        </div>
+        <!-- <button type="submit" class="btn btn-primary mb-2">Confirm identity</button> -->
+      </form>
+        <div class="card" style="width: 18rem;">
+            <img src="./image/icon.png" class="card-img-top" alt="...">
+            <div class="weather">
+                <div class="card-body">
+                  <div class="weather-data">
+                    
+                  </div>
+                <div class="card-body">
+                  <a href="#" class="card-link">Card link</a>
+                  <a href="#" class="card-link">Another link</a>
+                </div>
+            </div>
+          </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <script src="main.js"></script>
-</body>
+  </body>
 </html>

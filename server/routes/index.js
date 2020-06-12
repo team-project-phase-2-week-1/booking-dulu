@@ -1,12 +1,12 @@
 'use strict'
 
-const router = require('express').Router()
+const router = require('express').Router();
+const userRouter = require('./userRoutes');
+const weatherRouter = require('../routes/weather')
 const restaurantRoute = require('./restaurantRoute')
 
-router.get('/', (req, res) => {
-    res.send('hello')
-})
-
+router.use('/', userRouter);
+router.use('/weather', weatherRouter);
 router.use('/restaurants', restaurantRoute)
 
-module.exports = router
+module.exports =  router
