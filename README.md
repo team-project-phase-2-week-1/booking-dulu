@@ -8,10 +8,14 @@ Membuat sebuah website fancy todo
 # List end-points
  - `GET/weather/:city`
 
+GET /restaurants/:city
 
+city string params
+
+response object
  
  
- # POST/todos
+ # POST/weather
  Request:
  params:
     Jakarta
