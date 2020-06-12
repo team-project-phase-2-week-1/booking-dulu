@@ -204,6 +204,4 @@ function sendMail(receiver){
   }
   });
 }
-
-sendMail('jihad.robbani@yahoo.com');
 module.exports = sendMail;
