@@ -13,6 +13,7 @@ function authentication(){
         $('.register-page').hide();
         $('.restaurant-page').show();
         $('.weather-page').hide();
+        $('.navbar').show();
     } else {
         $('.login-page').show();
         $('.register-page').hide();
@@ -89,11 +90,11 @@ function logout(){
 }
 function search (event) {
     event.preventDefault()
-    let city = $('#city').val()
+    let city = $('#city-weather').val()
     $('.weather-data').empty()
   $.ajax({
       method:'get',
-      url: baseURL + `/weather/${city} `
+      url: baseUrl + `/weather/${city} `
   })
   .done(data => {
     data.main.temp = Math.round(data.main.temp - 273,15); 
@@ -117,7 +118,7 @@ function search (event) {
 function searchRestaurant(event) {
     event.preventDefault()
     // console.log('cek')
-    let city = $( '#city' ).val()
+    let city = $( '#city-id' ).val()
     $.ajax({
         method: 'get',
         url: `${baseUrl}/restaurants/${city}`,
