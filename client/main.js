@@ -11,17 +11,40 @@ function authentication(){
     if(localStorage.access_token){
         $('.login-page').hide();
         $('.register-page').hide();
-        listToDos();
+        $('.restaurant-page').hide();
+        $('.weather-page').hide();
     } else {
         $('.login-page').show();
         $('.register-page').hide();
+        $('.restaurant-page').hide();
+        $('.weather-page').hide();
     }
 }
+
 function toRegister(event){
     event.preventDefault();
     $('.register-page').show();
     $('.login-page').hide();
+    $('.restaurant-page').hide();
+    $('.weather-page').hide();
 }
+
+function toRestaurant(event){
+    event.preventDefault();
+    $('.register-page').hide();
+    $('.login-page').hide();
+    $('.restaurant-page').show();
+    $('.weather-page').hide();
+}
+
+function toWeather(event){
+    event.preventDefault();
+    $('.register-page').hide();
+    $('.login-page').hide();
+    $('.restaurant-page').hide();
+    $('.weather-page').show();
+}
+
 function register(event){
     let name = $('#name-reg')
     let email = $('#email-reg').val();
@@ -39,6 +62,7 @@ function register(event){
         console.log(err);
     })
 }
+
 function login(event){
     event.preventDefault();
     let email = $('#email').val();
@@ -49,6 +73,7 @@ function login(event){
         data: { email, password }
     })
     .done(data => {
+        console.log(data, 'inidata')
         localStorage.setItem('access_token', data.access_token);
         authentication();
     })
@@ -56,6 +81,7 @@ function login(event){
         console.log(err);
     })
 }
+
 function logout(){
     // localStorage.clear()
     localStorage.removeItem('access_token');
@@ -87,6 +113,7 @@ function search (event) {
     console.log(err.responseJSON.message)
   })
  }
+
 function searchRestaurant(event) {
     event.preventDefault()
     // console.log('cek')
