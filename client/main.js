@@ -3,7 +3,7 @@ let idData = null;
 
 $( document ).ready(function() {
     authentication();
-    searchRestaurant(event)
+    searchRestaurant()
     
 });
 
@@ -11,7 +11,7 @@ function authentication(){
     if(localStorage.access_token){
         $('.login-page').hide();
         $('.register-page').hide();
-        $('.restaurant-page').hide();
+        $('.restaurant-page').show();
         $('.weather-page').hide();
     } else {
         $('.login-page').show();
@@ -46,7 +46,7 @@ function toWeather(event){
 }
 
 function register(event){
-    let name = $('#name-reg')
+    let name = $('#name-reg').val();
     let email = $('#email-reg').val();
     let password = $('#password-reg').val();
     let gender = $('#gender-reg').val();
