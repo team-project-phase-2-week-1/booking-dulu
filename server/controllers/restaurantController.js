@@ -5,7 +5,7 @@ const axios = require('axios')
 class Controller {
     static getRestaurants(req, res, next) {
         const api_key = process.env.ZOMATO_KEY
-        const {city} = req.body
+        const {city} = req.params
         let entity_id
         axios.get(`https://developers.zomato.com/api/v2.1/cities?q=${city}`, {
           headers: {
