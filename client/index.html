@@ -11,33 +11,9 @@
   </head>
   <body>
 
-    <div class="container mt-5 restaurant">
-      <div class="container mt-5 text-center">
-          <h1>Restaurant Search</h1>
-      </div>
-      <!-- search-form -->
-      <nav class="navbar navbar-light bg-light">
-          <form onsubmit="searchRestaurant(event)" class="form-inline">
-            <input id="city" class="form-control mr-sm-2" type="search" placeholder="Search by City" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
-      </nav>
-      <!-- table-restaurant -->
-      <table class="table table-striped">
-          <thead class="thead-dark">
-            <tr>
-              <th scope="col">Name</th>
-              <th scope="col">Address</th>
-              <th scope="col">Action</th>
-            </tr>
-          </thead>
-          <tbody class="container-home">
-          </tbody>
-        </table>
-    </div>
-
-    <div class="login-page">
-      <h1>Welcome to Booking Dulu</h1>
+    <!-- login page -->
+    <div class="container mt-5 login-page">
+      <h1 class="text-center">Welcome to Booking Dulu</h1>
       <p>Please login to continue</p>
       <p>Click <a href="" onclick="toRegister(event)">here</a> to register</p>
       <form onsubmit="login(event)" id="login">
@@ -53,8 +29,9 @@
         </form>
     </div>
 
-    <div class="register-page">
-      <h2>Register new user</h2>
+    <!-- register page -->
+    <div class="container mt-5 register-page">
+      <h2 class="text-center">Register new user</h2>
       <form onsubmit="register(event)" id="register">
           <div class="form-group">
               <label for="name-reg">Name</label>
@@ -78,33 +55,84 @@
       </form>
     </div>
 
-    <div class="container d-flex justify-content-center mt-5 mb-5">
-      <form onsubmit="search(event)" id="search-form" class="form-inline">
-        <!-- <div class="form-group mb-2">
-          <label for="staticEmail2" class="sr-only">Email</label>
-          <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="email@example.com">
-        </div> -->
-        <div class="form-group mx-sm-3 mb-2">
-          <input type="text" class="form-control" id="city" placeholder="your city">
-          <input type="submit" class="btn btn-success ml-3" value="search">
+    <!-- restaurant page -->
+    <div class="container mt-5 restaurant-page">
+      <div class="container mt-5 text-center">
+          <h1>Restaurant Search</h1>
+      </div>
+      <!-- search-form -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a onclick="toRestaurant(event)" class="nav-link" href="#">Restaurant<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a onclick="toWeather(event)" class="nav-link" href="#">Weather</a>
+            </li>
+          </ul>
+          <form onsubmit="searchRestaurant(event)" class="form-inline">
+            <input id="city" class="form-control mr-sm-2" type="search" placeholder="Search by City" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
         </div>
-        <!-- <button type="submit" class="btn btn-primary mb-2">Confirm identity</button> -->
-      </form>
-        <div class="card" style="width: 18rem;">
-            <img src="./image/icon.png" class="card-img-top" alt="...">
-            <div class="weather">
-                <div class="card-body">
-                  <div class="weather-data">
-                    
-                  </div>
-                <div class="card-body">
-                  <a href="#" class="card-link">Card link</a>
-                  <a href="#" class="card-link">Another link</a>
-                </div>
-            </div>
-          </div>
+      </nav>
+      <!-- table-restaurant -->
+      <table class="table table-striped">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Address</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody class="container-home">
+          </tbody>
+        </table>
     </div>
 
+    <!-- weather page -->
+    <section class="weather-page">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a onclick="toRestaurant(event)" class="nav-link" href="#">Restaurant<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a onclick="toWeather(event)" class="nav-link" href="#">Weather</a>
+            </li>
+          </ul>
+          <form onsubmit="searchRestaurant(event)" class="form-inline">
+            <input id="city" class="form-control mr-sm-2" type="search" placeholder="Search by City" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+      <div class="container d-flex justify-content-center mt-5 mb-5">
+        <form onsubmit="search(event)" id="search-form" class="form-inline">
+          <div class="form-group mx-sm-3 mb-2">
+            <input type="text" class="form-control" id="city" placeholder="your city">
+            <input type="submit" class="btn btn-success ml-3" value="search">
+          </div>
+        </form>
+          <div class="card" style="width: 18rem;">
+              <img src="./image/icon.png" class="card-img-top" alt="...">
+              <div class="weather">
+                  <div class="card-body">
+                    <div class="weather-data">
+                      
+                    </div>
+                  <div class="card-body">
+                    <a href="#" class="card-link">Card link</a>
+                    <a href="#" class="card-link">Another link</a>
+                  </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </section>
+    
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
