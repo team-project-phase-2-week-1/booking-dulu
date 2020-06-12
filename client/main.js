@@ -2,9 +2,8 @@ const baseUrl = 'http://localhost:3000'
 let idData = null
 
 $( document ).ready(function() {
-    // console.log('cek')
-    searchRestaurant(event)
     // auth()
+    searchRestaurant(event)
 })
 
 // function auth() {
@@ -45,65 +44,3 @@ function searchRestaurant(event) {
         console.log(err)
     })
 }
-
-// function showRestaurant() {
-//     // console.log(localStorage.token)
-//     $.ajax({
-//         method: 'get',
-//         url: `${baseUrl}/restaurants`,
-//         headers: {
-//             access_token: localStorage.access_token
-//         }
-//     })
-//     .done(data => {
-//         console.log(data, 'ini data')
-        // data.forEach(restaurant => {
-        //     $('.container-home').append(`
-        //     <tr>
-        //         <td>${restaurant.name}</td>
-        //         <td>${restaurant.addresss}</td>
-        //         <td>
-        //             <a onclick="toEditPage(id)" class="btn btn-warning" href="#">Edit</a>
-        //             <a onclick="deleteTodo(id)" class="btn btn-danger" href="#">Delete</a>
-        //         </td>
-        //     </tr>
-        //     `)
-        // })
-//     })
-//     .fail(err => {
-//         console.log(err.responseJSON.errors, 'ini error')
-//     })
-// }
-
-// function toHome() {
-//     $('.home-page').show()
-//     $('.add-todo').hide()
-//     $('.edit-todo').hide()
-// }
-
-// function login(event) {
-//     event.preventDefault()
-//     let email = $( '#email' ).val()
-//     let password = $( '#password' ).val()
-//     $.ajax({
-//         method: 'post',
-//         url: `${baseUrl}/users/login`,
-//         data: { email, password }
-//     })
-//     .done(data => {
-//         localStorage.setItem('access_token', data.access_token)
-//         auth()
-//     })
-//     .fail(err => {
-//         console.log(err)
-//     })
-//     // .always(() => {
-//     //     $( '#email' ).val('')
-//     //     $( '#password' ).val('')
-//     // })
-// }
-
-// function logout() {
-//     localStorage.clear()
-//     auth()
-// }
