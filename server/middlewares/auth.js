@@ -21,24 +21,6 @@ function authentication(req, res, next){
         })
     }
 }
-// function authorization(req, res, next){
-//     const { id } = req.params;
-//     ToDo.findByPk(id)
-//     .then(data => {
-//         if(!data){
-//             next({ name: 'DataNotFound' });
-//         } else if(data.UserId !== req.userData.id){
-//             next({ name: 'NotAuthorized' });
-//         } else {
-//             next();
-//         }
-//     })
-//     .catch(err => {
-//         next(err);
-//     })
-// }
-
 module.exports = {
-    authentication,
-    authorization
+    authentication
 };
